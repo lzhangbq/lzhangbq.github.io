@@ -1,0 +1,110 @@
+en:
+  language: English
+  lang_code: en
+  switch_label: 中文
+  switch_url: /zh/
+  nav:
+    - label: About
+      url: "#about"
+    - label: Experience
+      url: "#experience"
+    - label: Projects
+      url: "#projects"
+    - label: Writing
+      url: /blog
+    - label: Contact
+      url: "#contact"
+  eyebrow: AI / LLM Engineer
+  title: Building reliable AI systems from model capability to product experience.
+  summary: "CS master's graduate, former TikTok software engineer in the United States, now focused on AI large language model development in China."
+  location: China
+  primary_cta: View Resume
+  secondary_cta: Contact Me
+  highlights:
+    - value: 2 years
+      label: Software engineering at TikTok US
+    - value: AI / LLM
+      label: Current engineering focus
+    - value: CMU
+      label: Master's study in computer science
+  focus:
+    - LLM applications
+    - Backend systems
+    - ML engineering
+    - Search and recommendation
+  about_title: About
+  about_body: "I work at the intersection of backend engineering, machine learning, and AI product development. My background spans large-scale software systems, model-driven applications, and applied machine learning projects across search, recommendation, NLP, and computer vision."
+  experience_title: Experience
+  experience:
+    - role: AI Large Language Model Developer
+      org: Current focus
+      meta: China
+      body: Building AI and LLM-oriented applications with an emphasis on practical engineering, reliability, and product integration.
+    - role: Software Development Engineer
+      org: TikTok
+      meta: United States · 2 years
+      body: Worked on production software systems in a fast-moving engineering environment with strong expectations for scale, quality, and delivery.
+    - role: M.S. in Computer Science
+      org: Carnegie Mellon University
+      meta: Pittsburgh
+      body: Studied intelligent information systems with coursework across machine learning, NLP, search engines, distributed systems, and production ML.
+  projects_title: Selected Projects
+  projects_intro: Selected academic and engineering projects from machine learning, search, and AI system development.
+  project_link_label: View project
+  contact_title: Contact
+  contact_body: "I am open to conversations around AI engineering, LLM applications, backend systems, and practical machine learning."
+zh:
+  language: 中文
+  lang_code: zh
+  switch_label: English
+  switch_url: /en/
+  nav:
+    - label: 关于
+      url: "#about"
+    - label: 经历
+      url: "#experience"
+    - label: 项目
+      url: "#projects"
+    - label: 文章
+      url: /blog
+    - label: 联系
+      url: "#contact"
+  eyebrow: AI 大模型开发工程师
+  title: 从模型能力到产品体验，构建可靠的 AI 系统。
+  summary: "计算机科学硕士，曾在美国 TikTok 担任软件开发工程师两年，目前回国从事 AI 大模型开发方向。"
+  location: 中国
+  primary_cta: 查看简历
+  secondary_cta: 联系我
+  highlights:
+    - value: 2 年
+      label: 美国 TikTok 软件工程经历
+    - value: AI / LLM
+      label: 当前技术方向
+    - value: CMU
+      label: 计算机科学硕士背景
+  focus:
+    - 大模型应用
+    - 后端系统
+    - 机器学习工程
+    - 搜索与推荐
+  about_title: 关于我
+  about_body: "我关注后端工程、机器学习与 AI 产品开发的交叉方向。过往经历覆盖大规模软件系统、模型驱动应用，以及搜索、推荐、NLP、计算机视觉等方向的机器学习项目。"
+  experience_title: 经历
+  experience:
+    - role: AI 大模型开发工程师
+      org: 当前方向
+      meta: 中国
+      body: 从事面向 AI 与大语言模型的应用和工程开发，关注实用性、可靠性以及与真实产品场景的结合。
+    - role: 软件开发工程师
+      org: TikTok
+      meta: 美国 · 2 年
+      body: 在快节奏的工程环境中参与生产级软件系统开发，关注系统规模、代码质量和交付效率。
+    - role: 计算机科学硕士
+      org: Carnegie Mellon University
+      meta: Pittsburgh
+      body: 学习方向覆盖机器学习、自然语言处理、搜索引擎、分布式系统和生产环境机器学习等课程。
+  projects_title: 精选项目
+  projects_intro: 这里整理了机器学习、搜索和 AI 系统开发相关的代表性学术与工程项目。
+  project_link_label: 查看项目
+  contact_title: 联系
+  contact_body: "欢迎交流 AI 工程、大模型应用、后端系统和实用机器学习相关话题。"

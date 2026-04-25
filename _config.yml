@@ -27,6 +27,10 @@ permalink: /:title/
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
 
+# To enable GoatCounter analytics, create a GoatCounter site and paste the
+# count endpoint below. Leave blank to disable.
+goatcounter_endpoint: https://lzhangbq.goatcounter.com/count
+
 # if you don't want comments in your posts, leave categories empty
 disqus:
   shortname: github # enter this from your disqus account

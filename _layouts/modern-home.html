@@ -1,0 +1,159 @@
+---
+layout: compress
+---
+{% if page.lang == "zh" %}
+    {% assign home = site.data.home.zh %}
+{% else %}
+    {% assign home = site.data.home.en %}
+{% endif %}
+<!DOCTYPE html>
+<html lang="{{ home.lang_code }}">
+<head>
+    {% if site.analytics-google %}
+        {% include analytics-google.html %}
+    {% endif %}
+
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name=author content="{{ site.name }}">
+
+    {% seo %}
+
+    {% include favicon.html %}
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
+    <link rel="alternate" hreflang="en" href="{{ site.url }}/en/">
+    <link rel="alternate" hreflang="zh" href="{{ site.url }}/zh/">
+    <link rel="alternate" hreflang="x-default" href="{{ site.url }}/zh/">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
+
+    <style>
+    {% if site.dark-theme %}
+        {% capture scss_sheet %}{% include style-dark.scss %}{% endcapture %}
+    {% else %}
+        {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
+    {% endif %}
+
+    {{ scss_sheet | scssify }}
+    </style>
+</head>
+<body class="modern-home">
+    <header class="site-shell modern-nav" aria-label="Primary navigation">
+        <a class="brand" href="{{ page.url | relative_url }}" aria-label="{{ site.name }}">
+            <span class="brand-mark">LZ</span>
+            <span class="brand-text">{{ site.name }}</span>
+        </a>
+
+        <nav class="modern-nav-links">
+            {% for item in home.nav %}
+                <a href="{{ item.url }}">{{ item.label }}</a>
+            {% endfor %}
+            <a class="language-switch" href="{{ home.switch_url | relative_url }}">{{ home.switch_label }}</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="site-shell hero-section">
+            <div class="hero-copy">
+                <p class="eyebrow">{{ home.eyebrow }}</p>
+                <h1>{{ home.title }}</h1>
+                <p class="hero-summary">{{ home.summary }}</p>
+
+                <div class="hero-actions">
+                    <a class="button primary" href="{{ site.resume-url | relative_url }}">{{ home.primary_cta }}</a>
+                    <a class="button secondary" href="mailto:{{ site.email }}">{{ home.secondary_cta }}</a>
+                </div>
+            </div>
+
+            <aside class="profile-panel" aria-label="Profile summary">
+                <img class="profile-photo" src="{{ site.picture | relative_url }}" alt="{{ site.name }}">
+                <div>
+                    <p class="profile-name">{{ site.name }}</p>
+                    <p class="profile-role">{{ home.eyebrow }}</p>
+                </div>
+                <dl class="profile-stats">
+                    {% for item in home.highlights %}
+                        <div>
+                            <dt>{{ item.value }}</dt>
+                            <dd>{{ item.label }}</dd>
+                        </div>
+                    {% endfor %}
+                </dl>
+            </aside>
+        </section>
+
+        <section class="site-shell focus-strip" aria-label="Technical focus">
+            {% for item in home.focus %}
+                <span>{{ item }}</span>
+            {% endfor %}
+        </section>
+
+        <section id="about" class="site-shell content-section two-column-section">
+            <div>
+                <p class="section-kicker">01</p>
+                <h2>{{ home.about_title }}</h2>
+            </div>
+            <p class="section-lead">{{ home.about_body }}</p>
+        </section>
+
+        <section id="experience" class="site-shell content-section">
+            <div class="section-heading">
+                <p class="section-kicker">02</p>
+                <h2>{{ home.experience_title }}</h2>
+            </div>
+            <div class="timeline">
+                {% for item in home.experience %}
+                    <article class="timeline-item">
+                        <div>
+                            <h3>{{ item.role }}</h3>
+                            <p>{{ item.org }}</p>
+                        </div>
+                        <div>
+                            <span>{{ item.meta }}</span>
+                            <p>{{ item.body }}</p>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="projects" class="site-shell content-section">
+            <div class="section-heading">
+                <p class="section-kicker">03</p>
+                <h2>{{ home.projects_title }}</h2>
+                <p>{{ home.projects_intro }}</p>
+            </div>
+
+            <div class="project-grid">
+                {% assign project_posts = site.posts | where: "projects", true %}
+                {% for post in project_posts limit: 4 %}
+                        <article class="project-card">
+                            <p>{{ post.tag }}</p>
+                            <h3>{{ post.title }}</h3>
+                            {% if post.description %}
+                                <span>{{ post.description }}</span>
+                            {% endif %}
+                            <a href="{{ post.url | relative_url }}">{{ home.project_link_label }}</a>
+                        </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section id="contact" class="site-shell contact-section">
+            <div>
+                <p class="section-kicker">04</p>
+                <h2>{{ home.contact_title }}</h2>
+                <p>{{ home.contact_body }}</p>
+            </div>
+            <div class="contact-actions">
+                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                <a href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    {% include icons.html %}
+    {% include analytics-goatcounter.html %}
+</body>
+</html>
