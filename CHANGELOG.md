@@ -1,5 +1,11 @@
 # 变更日志
 
+## 2026-04-26
+
+- 重写 `README.md`，将原模板说明替换为当前个人网站的中文维护文档。
+- 原因：旧 README 仍是 Indigo 模板介绍，已经无法反映当前双语首页、GoatCounter 统计和 GitHub Pages 发布流程。
+- 范围：补充网站定位、技术栈、目录结构、内容维护方式、访问统计、发布流程和维护原则。
+
 ## 2026-04-25
 
 - 确认使用 GoatCounter 作为网站访问统计方案，并在 `_config.yml` 中启用 `https://lzhangbq.goatcounter.com/count`。
