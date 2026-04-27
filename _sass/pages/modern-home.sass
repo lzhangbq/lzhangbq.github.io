@@ -1,7 +1,74 @@
+// ── Theme tokens (warm = default, dark = [data-theme="dark"]) ──
+
+\:root
+    --mh-bg:              #f7f4ed
+    --mh-bg-card:         #fffdf8
+    --mh-text:            #172033
+    --mh-heading:         #172033
+    --mh-text-secondary:  #445066
+    --mh-text-muted:      #667184
+    --mh-text-summary:    #4d5a70
+    --mh-accent:          #c34a2c
+    --mh-accent-2:        #172033
+    --mh-border:          rgba(23, 32, 51, .12)
+    --mh-border-strong:   rgba(23, 32, 51, .18)
+    --mh-nav-hover:       rgba(23, 32, 51, .07)
+    --mh-tag-bg:          #e8eee9
+    --mh-tag-text:        #172033
+    --mh-panel-accent:    #d8e6df
+    --mh-card-shadow:     rgba(46, 38, 25, .12)
+    --mh-glow:            0 0 0 transparent
+    --mh-gradient-text:   none
+    --mh-gradient-fill:   currentColor
+    --mh-overlay-1:       transparent
+    --mh-overlay-2:       transparent
+    --mh-panel-glow:      none
+    --mh-tech-tag-color:  #2a6e4e
+    --mh-tech-tag-bg:     rgba(42, 110, 78, .08)
+    --mh-tech-tag-border: rgba(42, 110, 78, .12)
+
+[data-theme="dark"]
+    --mh-bg:              #0a0f1a
+    --mh-bg-card:         #111827
+    --mh-text:            #e2e8f0
+    --mh-heading:         #fff
+    --mh-text-secondary:  #8492a6
+    --mh-text-muted:      #64748b
+    --mh-text-summary:    #8492a6
+    --mh-accent:          #00d4aa
+    --mh-accent-2:        #4f8ff7
+    --mh-border:          rgba(79, 143, 247, .12)
+    --mh-border-strong:   rgba(79, 143, 247, .30)
+    --mh-nav-hover:       rgba(255, 255, 255, .06)
+    --mh-tag-bg:          rgba(79, 143, 247, .1)
+    --mh-tag-text:        #4f8ff7
+    --mh-panel-accent:    transparent
+    --mh-card-shadow:     rgba(0, 0, 0, .3)
+    --mh-glow:            0 0 60px rgba(79, 143, 247, .08)
+    --mh-gradient-text:   linear-gradient(135deg, #4f8ff7, #00d4aa)
+    --mh-gradient-fill:   transparent
+    --mh-overlay-1:       rgba(79, 143, 247, .06)
+    --mh-overlay-2:       rgba(0, 212, 170, .04)
+    --mh-panel-glow:      linear-gradient(135deg, rgba(79, 143, 247, .25), rgba(0, 212, 170, .15))
+    --mh-tech-tag-color:  #4f8ff7
+    --mh-tech-tag-bg:     rgba(79, 143, 247, .08)
+    --mh-tech-tag-border: rgba(79, 143, 247, .12)
+
+// ── Layout ──
+
 .modern-home
     min-height: 100vh
-    color: #172033
-    background: #f7f4ed
+    color: var(--mh-text)
+    background: var(--mh-bg)
+
+    // ambient background glow (visible in dark theme)
+    &::before
+        content: ""
+        position: fixed
+        inset: 0
+        z-index: -1
+        pointer-events: none
+        background-image: radial-gradient(circle at 20% 20%, var(--mh-overlay-1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, var(--mh-overlay-2) 0%, transparent 50%)
 
     a
         color: inherit
@@ -14,6 +81,8 @@
         @media #{$below}
             width: calc(100% - 28px)
             max-width: 720px
+
+    // ── Navigation ──
 
     .modern-nav
         display: flex
@@ -38,15 +107,15 @@
         place-items: center
         width: 38px
         height: 38px
-        color: #f7f4ed
-        background: #172033
+        color: var(--mh-bg)
+        background: var(--mh-accent-2)
         border-radius: 10px
         font-size: 1.3rem
         letter-spacing: 0
 
     .brand-text
         font-size: 1.45rem
-        color: #172033
+        color: var(--mh-heading)
 
     .modern-nav-links
         display: flex
@@ -57,19 +126,41 @@
 
         > a
             padding: 8px 11px
-            color: #445066
+            color: var(--mh-text-secondary)
             text-decoration: none
             font-size: 1.4rem
             font-weight: 500
             border-radius: 8px
 
             &:hover
-                color: #172033
-                background: rgba(23, 32, 51, .07)
+                color: var(--mh-heading)
+                background: var(--mh-nav-hover)
 
         > .language-switch
-            color: #172033
-            border: 1px solid rgba(23, 32, 51, .18)
+            color: var(--mh-heading)
+            border: 1px solid var(--mh-border-strong)
+
+    // ── Theme toggle button ──
+
+    .theme-toggle
+        display: inline-flex
+        align-items: center
+        gap: 6px
+        padding: 8px 12px
+        background: transparent
+        border: 1px solid var(--mh-border-strong)
+        border-radius: 8px
+        color: var(--mh-heading)
+        font-size: 1.35rem
+        font-weight: 600
+        cursor: pointer
+        transition: background .2s, color .2s, border-color .2s
+        font-family: inherit
+
+        &:hover
+            background: var(--mh-nav-hover)
+
+    // ── Hero ──
 
     .hero-section
         display: grid
@@ -88,7 +179,7 @@
     .eyebrow,
     .section-kicker
         margin: 0 0 14px
-        color: #c34a2c
+        color: var(--mh-accent)
         font-size: 1.25rem
         font-weight: 700
         letter-spacing: .08em
@@ -98,7 +189,7 @@
         > h1
             max-width: 760px
             margin: 0
-            color: #172033
+            color: var(--mh-heading)
             font-size: 6.4rem
             line-height: .98
             letter-spacing: 0
@@ -107,10 +198,16 @@
                 font-size: 4rem
                 line-height: 1.08
 
+        > h1 .gradient
+            background: var(--mh-gradient-text)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: var(--mh-gradient-fill)
+            background-clip: text
+
         > .hero-summary
             max-width: 640px
             margin: 28px 0 0
-            color: #4d5a70
+            color: var(--mh-text-summary)
             font-size: 1.9rem
             line-height: 1.7
             font-weight: 400
@@ -134,19 +231,21 @@
 
         &.primary
             color: #fff
-            background: #172033
+            background: var(--mh-accent-2)
 
         &.secondary
-            color: #172033
-            border: 1px solid rgba(23, 32, 51, .18)
+            color: var(--mh-heading)
+            border: 1px solid var(--mh-border-strong)
+
+    // ── Profile panel ──
 
     .profile-panel
         position: relative
         padding: 28px
-        background: #fffdf8
-        border: 1px solid rgba(23, 32, 51, .1)
+        background: var(--mh-bg-card)
+        border: 1px solid var(--mh-border)
         border-radius: 16px
-        box-shadow: 0 24px 60px rgba(46, 38, 25, .12)
+        box-shadow: var(--mh-glow), 0 24px 60px var(--mh-card-shadow)
 
         &:before
             content: ""
@@ -154,7 +253,7 @@
             inset: 18px -18px -18px 18px
             z-index: -1
             border-radius: 16px
-            background: #d8e6df
+            background: var(--mh-panel-accent)
 
     .profile-photo
         width: 112px
@@ -165,13 +264,13 @@
 
     .profile-name
         margin: 0
-        color: #172033
+        color: var(--mh-heading)
         font-size: 2.4rem
         font-weight: 700
 
     .profile-role
         margin: 6px 0 0
-        color: #667184
+        color: var(--mh-text-muted)
         font-weight: 500
 
     .profile-stats
@@ -181,17 +280,19 @@
 
         > div
             padding-top: 14px
-            border-top: 1px solid rgba(23, 32, 51, .1)
+            border-top: 1px solid var(--mh-border)
 
         dt
-            color: #172033
+            color: var(--mh-heading)
             font-size: 2rem
             font-weight: 800
 
         dd
             margin: 4px 0 0
-            color: #687386
+            color: var(--mh-text-muted)
             line-height: 1.45
+
+    // ── Focus strip ──
 
     .focus-strip
         display: flex
@@ -201,19 +302,21 @@
 
         > span
             padding: 10px 14px
-            color: #172033
-            background: #e8eee9
+            color: var(--mh-tag-text)
+            background: var(--mh-tag-bg)
             border-radius: 999px
             font-size: 1.35rem
             font-weight: 700
 
+    // ── Content sections ──
+
     .content-section
         padding: 72px 0
-        border-top: 1px solid rgba(23, 32, 51, .12)
+        border-top: 1px solid var(--mh-border)
 
         h2
             margin: 0
-            color: #172033
+            color: var(--mh-heading)
             font-size: 3.6rem
             letter-spacing: 0
 
@@ -232,7 +335,7 @@
     .section-lead,
     .section-heading > p
         margin: 0
-        color: #445066
+        color: var(--mh-text-secondary)
         font-size: 1.8rem
         line-height: 1.75
         font-weight: 400
@@ -244,39 +347,43 @@
         > p:last-child
             margin-top: 14px
 
+    // ── Timeline ──
+
     .timeline
         display: grid
         gap: 0
-        border-top: 1px solid rgba(23, 32, 51, .12)
+        border-top: 1px solid var(--mh-border)
 
     .timeline-item
         display: grid
         grid-template-columns: 300px minmax(0, 1fr)
         gap: 34px
         padding: 26px 0
-        border-bottom: 1px solid rgba(23, 32, 51, .12)
+        border-bottom: 1px solid var(--mh-border)
 
         h3
             margin: 0
-            color: #172033
+            color: var(--mh-heading)
             font-size: 2rem
 
         p
             margin: 7px 0 0
-            color: #667184
+            color: var(--mh-text-muted)
             line-height: 1.65
             font-weight: 400
 
         span
             display: inline-block
             margin-bottom: 8px
-            color: #c34a2c
+            color: var(--mh-accent)
             font-size: 1.35rem
             font-weight: 700
 
         @media #{$below}
             grid-template-columns: 1fr
             gap: 10px
+
+    // ── Project cards ──
 
     .project-grid
         display: grid
@@ -289,13 +396,21 @@
     .project-card
         min-height: 210px
         padding: 24px
-        background: #fffdf8
-        border: 1px solid rgba(23, 32, 51, .1)
+        background: var(--mh-bg-card)
+        border: 1px solid var(--mh-border)
         border-radius: 14px
+        display: flex
+        flex-direction: column
+        transition: border-color .25s, box-shadow .25s, transform .25s
+
+        &:hover
+            border-color: var(--mh-border-strong)
+            box-shadow: var(--mh-glow)
+            transform: translateY(-2px)
 
         > p
             margin: 0 0 14px
-            color: #c34a2c
+            color: var(--mh-accent)
             font-size: 1.25rem
             font-weight: 800
             letter-spacing: .06em
@@ -304,19 +419,47 @@
         > h3
             min-height: 58px
             margin: 0
-            color: #172033
+            color: var(--mh-heading)
             font-size: 2.05rem
             line-height: 1.35
 
+        > span
+            margin-top: 8px
+            color: var(--mh-text-muted)
+            font-size: 1.4rem
+            line-height: 1.6
+
+        > .tech-tags
+            display: flex
+            flex-wrap: wrap
+            gap: 6px
+            margin-top: auto
+            padding-top: 16px
+
+        > .tech-tags span
+            display: inline-block
+            padding: 4px 10px
+            font-size: 1.15rem
+            font-weight: 600
+            border-radius: 6px
+            color: var(--mh-tech-tag-color)
+            background: var(--mh-tech-tag-bg)
+            border: 1px solid var(--mh-tech-tag-border)
+            text-transform: none
+            letter-spacing: 0
+            margin-bottom: 0
+
         > a
             display: inline-block
-            margin-top: 28px
-            color: #172033
+            margin-top: 16px
+            color: var(--mh-heading)
             font-weight: 800
             text-decoration: none
 
             &:hover
                 text-decoration: underline
+
+    // ── Contact ──
 
     .contact-section
         display: flex
@@ -324,17 +467,17 @@
         justify-content: space-between
         gap: 32px
         padding: 72px 0 90px
-        border-top: 1px solid rgba(23, 32, 51, .12)
+        border-top: 1px solid var(--mh-border)
 
         h2
             margin: 0
-            color: #172033
+            color: var(--mh-heading)
             font-size: 3.6rem
 
         p
             max-width: 620px
             margin: 14px 0 0
-            color: #445066
+            color: var(--mh-text-secondary)
             font-weight: 400
 
         @media #{$below}
@@ -348,7 +491,7 @@
         gap: 10px
 
         > a
-            color: #172033
+            color: var(--mh-heading)
             font-weight: 800
             text-decoration: none
 

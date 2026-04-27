@@ -13,6 +13,7 @@
 - **身份表达**：计算机科学硕士、前美国 TikTok 软件开发工程师、当前 AI / 大模型开发方向。
 - **内容结构**：中文首页、英文首页、经历、项目、文章、联系方式。
 - **技术取向**：保持静态网站架构，优先稳定、轻量、易维护，不引入不必要的前端框架或后端服务。
+- **双主题切换**：支持暖色工程风（默认）和深色科技风，导航栏一键切换，选择通过 localStorage 持久化。
 - **数据统计**：使用 GoatCounter 做轻量访问统计，不需要 Cloudflare DNS、数据库或自建服务。
 
 ## 线上入口
@@ -35,17 +36,17 @@
 ```text
 .
 ├── _config.yml                         # 站点配置、个人信息、社交链接、统计配置
-├── _data/home.yml                      # 中英文新版首页内容
+├── _data/home.yml                      # 中英文首页内容、主题切换文案
 ├── _layouts/
 │   ├── default.html                    # 旧页面/文章通用布局
-│   ├── modern-home.html                # 新版双语首页布局
+│   ├── modern-home.html                # 新版双语首页布局（含主题切换 JS）
 │   ├── page.html                       # 普通页面布局
 │   └── post.html                       # 项目/文章布局
 ├── _includes/
 │   ├── analytics-goatcounter.html      # GoatCounter 统计脚本
 │   └── style.scss                      # Sass 汇总入口
 ├── _sass/
-│   └── pages/modern-home.sass          # 新版首页样式
+│   └── pages/modern-home.sass          # 首页样式（CSS 自定义属性双主题）
 ├── _posts/                             # 项目与文章内容
 ├── assets/                             # 简历、图片、图标等静态资源
 ├── en/index.html                       # 英文首页入口
@@ -89,6 +90,20 @@ _config.yml
 - `resume-url`：简历文件路径。
 - `github` / `linkedin` / `email`：社交与联系方式。
 - `goatcounter_endpoint`：GoatCounter 统计地址。
+
+### 主题切换
+
+网站支持两种视觉主题，通过导航栏按钮切换：
+
+- **暖色工程风**（默认）：暖白底色 + 深色文字 + 红色强调，专业稳重。
+- **深色科技风**：深蓝黑底色 + 蓝/青绿强调 + 渐变文字和发光效果，技术感强。
+
+实现方式：
+
+- 所有主题色通过 CSS 自定义属性定义在 `_sass/pages/modern-home.sass` 顶部（`:root` 和 `[data-theme="dark"]`）。
+- 切换逻辑为内联 JS，无外部依赖。
+- 用户选择通过 `localStorage` 持久化，`<head>` 内同步脚本防止页面加载闪烁。
+- 修改主题色只需编辑 Sass 文件顶部的变量定义，所有页面自动生效。
 
 ### 新增项目或文章
 

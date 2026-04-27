@@ -1,5 +1,18 @@
 # 变更日志
 
+## 2026-04-27
+
+- 新增双主题切换功能：暖色工程风（默认）和深色科技风，导航栏可一键切换。
+- 原因：两种视觉风格各有优势——暖色偏专业稳重适合猎头和 employer，深色偏科技感适合同行和技术社区——用户希望同时保留。
+- 范围：
+  - 重构 `_sass/pages/modern-home.sass`，将所有硬编码颜色替换为 CSS 自定义属性（`--mh-*` 前缀），在 `:root` 和 `[data-theme="dark"]` 中分别定义两套主题色。
+  - 在 `_layouts/modern-home.html` 中添加：`<head>` 内防闪烁同步脚本、导航栏主题切换按钮、`<body>` 底部切换逻辑 JS。
+  - 在 `_data/home.yml` 中添加切换按钮双语文案（`theme_toggle_dark` / `theme_toggle_light`）和 Hero 渐变文字标记（`title_highlight`）。
+- 深色主题特有效果：渐变标题文字、卡片发光边框、背景辐射光晕。
+- 主题选择通过 localStorage 持久化，刷新和跨页面保持一致。
+- 升级项目卡片：新增 tech-tags 技术标签展示、hover 上浮和发光效果。
+- 所有改动仅影响 modern-home 相关文件，旧页面（blog、about 等）不受影响。
+
 ## 2026-04-26
 
 - 重写 `README.md`，将原模板说明替换为当前个人网站的中文维护文档。

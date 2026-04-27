@@ -51,6 +51,9 @@ en:
   projects_title: Selected Projects
   projects_intro: Selected academic and engineering projects from machine learning, search, and AI system development.
   project_link_label: View project
+  theme_toggle_dark: Dark
+  theme_toggle_light: Light
+  title_highlight: reliable AI systems
   contact_title: Contact
   contact_body: "I am open to conversations around AI engineering, LLM applications, backend systems, and practical machine learning."
 zh:
@@ -106,5 +109,8 @@ zh:
   projects_title: 精选项目
   projects_intro: 这里整理了机器学习、搜索和 AI 系统开发相关的代表性学术与工程项目。
   project_link_label: 查看项目
+  theme_toggle_dark: 暗色
+  theme_toggle_light: 亮色
+  title_highlight: 可靠的 AI 系统
   contact_title: 联系
   contact_body: "欢迎交流 AI 工程、大模型应用、后端系统和实用机器学习相关话题。"

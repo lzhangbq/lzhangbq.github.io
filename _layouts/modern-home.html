@@ -36,6 +36,13 @@ layout: compress
 
     {{ scss_sheet | scssify }}
     </style>
+
+    <script>
+    (function(){
+      var t = localStorage.getItem('theme');
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+    </script>
 </head>
 <body class="modern-home">
     <header class="site-shell modern-nav" aria-label="Primary navigation">
@@ -48,6 +55,13 @@ layout: compress
             {% for item in home.nav %}
                 <a href="{{ item.url }}">{{ item.label }}</a>
             {% endfor %}
+            <button class="theme-toggle" type="button"
+                    aria-label="Toggle theme"
+                    data-label-dark="{{ home.theme_toggle_dark }}"
+                    data-label-light="{{ home.theme_toggle_light }}">
+                <span class="theme-toggle-icon"></span>
+                <span class="theme-toggle-label"></span>
+            </button>
             <a class="language-switch" href="{{ home.switch_url | relative_url }}">{{ home.switch_label }}</a>
         </nav>
     </header>
@@ -56,7 +70,13 @@ layout: compress
         <section class="site-shell hero-section">
             <div class="hero-copy">
                 <p class="eyebrow">{{ home.eyebrow }}</p>
-                <h1>{{ home.title }}</h1>
+                {% assign hl = home.title_highlight %}
+                {% if hl and home.title contains hl %}
+                    {% assign parts = home.title | split: hl %}
+                    <h1>{{ parts[0] }}<span class="gradient">{{ hl }}</span>{{ parts[1] }}</h1>
+                {% else %}
+                    <h1>{{ home.title }}</h1>
+                {% endif %}
                 <p class="hero-summary">{{ home.summary }}</p>
 
                 <div class="hero-actions">
@@ -133,6 +153,13 @@ layout: compress
                             {% if post.description %}
                                 <span>{{ post.description }}</span>
                             {% endif %}
+                            {% if post.tech_tags %}
+                                <div class="tech-tags">
+                                    {% for t in post.tech_tags %}
+                                        <span>{{ t }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
                             <a href="{{ post.url | relative_url }}">{{ home.project_link_label }}</a>
                         </article>
                 {% endfor %}
@@ -152,6 +179,33 @@ layout: compress
             </div>
         </section>
     </main>
+
+    <script>
+    (function(){
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var html = document.documentElement;
+      var iconEl = btn.querySelector('.theme-toggle-icon');
+      var labelEl = btn.querySelector('.theme-toggle-label');
+      function update() {
+        var isDark = html.getAttribute('data-theme') === 'dark';
+        iconEl.textContent = isDark ? '\u2600' : '\u263E';
+        labelEl.textContent = isDark ? btn.dataset.labelLight : btn.dataset.labelDark;
+      }
+      btn.addEventListener('click', function() {
+        var isDark = html.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+          html.removeAttribute('data-theme');
+          localStorage.removeItem('theme');
+        } else {
+          html.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+        update();
+      });
+      update();
+    })();
+    </script>
 
     {% include icons.html %}
     {% include analytics-goatcounter.html %}
