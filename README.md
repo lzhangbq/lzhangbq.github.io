@@ -6,22 +6,20 @@
   <a href="https://lzhangbq.github.io/"><strong>https://lzhangbq.github.io/</strong></a>
 </p>
 
-网站定位是一个面向 AI / 大模型开发方向的双语个人作品集。它用于集中展示个人背景、工程经历、精选项目、简历入口与联系方式，并保留后续持续更新文章和项目的能力。
+网站定位是一个面向 AI / 大模型开发方向的双语个人作品集。它用于集中展示个人背景、工程经历、精选项目、简历入口与联系方式，并保留后续持续更新项目和内容的能力。
 
 ## 网站定位
 
 - **身份表达**：计算机科学硕士、前美国 TikTok 软件开发工程师、当前 AI / 大模型开发方向。
-- **内容结构**：中文首页、英文首页、经历、项目、文章、联系方式。
+- **内容结构**：中文首页、英文首页、经历、项目、联系方式。
 - **技术取向**：保持静态网站架构，优先稳定、轻量、易维护，不引入不必要的前端框架或后端服务。
 - **双主题切换**：支持暖色工程风（默认）和深色科技风，导航栏一键切换，选择通过 localStorage 持久化。
-- **数据统计**：使用 GoatCounter 做轻量访问统计，不需要 Cloudflare DNS、数据库或自建服务。
 
 ## 线上入口
 
 - 中文主入口：`https://lzhangbq.github.io/`
 - 中文页面：`https://lzhangbq.github.io/zh/`
 - 英文页面：`https://lzhangbq.github.io/en/`
-- GoatCounter 后台：`https://lzhangbq.goatcounter.com/`
 
 ## 技术栈
 
@@ -29,13 +27,12 @@
 - **Liquid**：模板和内容渲染。
 - **Sass**：页面样式组织。
 - **Markdown**：项目、文章和个人内容维护。
-- **GoatCounter**：隐私友好的轻量访问统计。
 
 ## 目录说明
 
 ```text
 .
-├── _config.yml                         # 站点配置、个人信息、社交链接、统计配置
+├── _config.yml                         # 站点配置、个人信息、社交链接
 ├── _data/home.yml                      # 中英文首页内容、主题切换文案
 ├── _data/projects.yml                  # 首页精选项目数据
 ├── _layouts/
@@ -43,9 +40,7 @@
 │   ├── modern-home.html                # 新版双语首页布局（含主题切换 JS）
 │   ├── page.html                       # 普通页面布局
 │   └── post.html                       # 项目/文章布局
-├── _includes/
-│   ├── analytics-goatcounter.html      # GoatCounter 统计脚本
-│   └── style.scss                      # Sass 汇总入口
+├── _includes/                          # 公共模板片段
 ├── _sass/
 │   └── pages/modern-home.sass          # 首页样式（CSS 自定义属性双主题）
 ├── _posts/                             # 项目与文章内容
@@ -90,7 +85,6 @@ _config.yml
 - `picture`：头像路径。
 - `resume-url`：简历文件路径。
 - `github` / `linkedin` / `email`：社交与联系方式。
-- `goatcounter_endpoint`：GoatCounter 统计地址。
 
 ### 主题切换
 
@@ -106,7 +100,7 @@ _config.yml
 - 用户选择通过 `localStorage` 持久化，`<head>` 内同步脚本防止页面加载闪烁。
 - 修改主题色只需编辑 Sass 文件顶部的变量定义，所有页面自动生效。
 
-### 新增项目或文章
+### 新增项目或内容
 
 首页精选项目集中维护在：
 
@@ -126,7 +120,7 @@ _data/projects.yml
 - `url`：项目链接，通常指向 GitHub。
 - `tech_tags`：技术标签。
 
-旧项目和文章内容仍保留在 `_posts/` 中，用于历史项目详情和后续迁移。
+旧项目和历史内容仍保留在 `_posts/` 中，用于历史项目详情和后续迁移。当前首页项目卡片优先从 `_data/projects.yml` 读取，避免公开入口跳转到未维护的旧页面。
 
 在 `_posts/` 中新增 Markdown 文件，文件名格式建议为：
 
@@ -153,22 +147,6 @@ assets/LiangweiZhang_CV.pdf
 
 如果文件名变化，需要同步更新 `_config.yml` 中的 `resume-url`。
 
-## 访问统计
-
-当前使用 GoatCounter：
-
-```yaml
-goatcounter_endpoint: https://lzhangbq.goatcounter.com/count
-```
-
-部署后可以检查线上页面是否包含统计脚本：
-
-```bash
-curl -s https://lzhangbq.github.io/ | grep goatcounter
-```
-
-如果看到 `data-goatcounter="https://lzhangbq.goatcounter.com/count"`，说明统计脚本已经上线。
-
 ## 发布流程
 
 当前部署分支是：
@@ -194,7 +172,7 @@ https://lzhangbq.github.io/
 
 ## 变更记录原则
 
-所有代码、布局、内容结构或统计方案的变更，都需要同步记录在：
+所有代码、布局或内容结构变更，都需要同步记录在：
 
 ```text
 CHANGELOG.md
@@ -205,7 +183,7 @@ CHANGELOG.md
 - 改了什么。
 - 为什么改。
 - 影响范围。
-- 是否涉及部署或第三方服务。
+- 是否涉及部署。
 
 ## 维护原则
 

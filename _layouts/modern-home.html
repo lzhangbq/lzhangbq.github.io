@@ -53,7 +53,7 @@ layout: compress
 
         <nav class="modern-nav-links">
             {% for item in home.nav %}
-                <a href="{{ item.url }}">{{ item.label }}</a>
+                <a href="{{ item.url }}"{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.label }}</a>
             {% endfor %}
             <button class="theme-toggle" type="button"
                     aria-label="Toggle theme"

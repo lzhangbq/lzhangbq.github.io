@@ -10,8 +10,9 @@ en:
       url: "#experience"
     - label: Projects
       url: "#projects"
-    - label: Writing
-      url: /blog
+    - label: Publications
+      url: https://scholar.google.com/citations?user=hV55R1AAAAAJ&hl=zh-CN
+      external: true
     - label: Contact
       url: "#contact"
   eyebrow: AI / LLM Engineer
@@ -70,8 +71,9 @@ zh:
       url: "#experience"
     - label: 项目
       url: "#projects"
-    - label: 文章
-      url: /blog
+    - label: 论文
+      url: https://scholar.google.com/citations?user=hV55R1AAAAAJ&hl=zh-CN
+      external: true
     - label: 联系
       url: "#contact"
   eyebrow: AI 大模型工程师

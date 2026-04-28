@@ -2,6 +2,13 @@
 
 ## 2026-04-28
 
+- 更新公开 README，移除私有站点维护信息。
+- 原因：部分站点维护信息属于站点维护者私有内容，不适合在公开项目说明中展示具体服务、后台入口或检查方式。
+- 首页中英文导航将“文章 / Writing”入口替换为“论文 / Publications”外链，指向 Google Scholar 个人主页。
+- 原因：当前没有公开的 `blog` 类型文章，`/blog` 页面会进入空列表；Google Scholar 更适合作为当前阶段的公开学术成果入口。
+- 为新版首页导航增加外链支持，外部链接会在新标签页打开并带有安全的 `rel` 属性。
+- 更新站点公开联系邮箱为 `lzhangbq@outlook.com`。
+- 范围：更新 `_config.yml`，首页联系按钮和邮箱展示会随站点配置同步生效。
 - 更新新版首页中英文内容，将个人定位从学生/求职导向调整为 AI / 大模型工程师导向。
 - 原因：当前背景已从学生阶段转向具备 TikTok 生产级工程经验、并聚焦模型微调与 AI 模型评测能力的 AI / 大模型工程方向，需要更符合公开个人品牌的表达。
 - 范围：更新 `_data/home.yml` 中的 Hero 摘要、About、Experience、技术方向标签、项目区块介绍和标题高亮文案。
@@ -30,15 +37,15 @@
 ## 2026-04-26
 
 - 重写 `README.md`，将原模板说明替换为当前个人网站的中文维护文档。
-- 原因：旧 README 仍是 Indigo 模板介绍，已经无法反映当前双语首页、GoatCounter 统计和 GitHub Pages 发布流程。
-- 范围：补充网站定位、技术栈、目录结构、内容维护方式、访问统计、发布流程和维护原则。
+- 原因：旧 README 仍是 Indigo 模板介绍，已经无法反映当前双语首页和 GitHub Pages 发布流程。
+- 范围：补充网站定位、技术栈、目录结构、内容维护方式、发布流程和维护原则。
 
 ## 2026-04-25
 
-- 确认使用 GoatCounter 作为网站访问统计方案，并在 `_config.yml` 中启用 `https://lzhangbq.goatcounter.com/count`。
-- 原因：GoatCounter 可以直接配合 GitHub Pages 使用，不需要接入 Cloudflare DNS、不需要后端服务，也不会增加本地依赖。
+- 确认使用轻量私有维护配置，并在站点配置中启用。
+- 原因：该方案可以直接配合 GitHub Pages 使用，不需要接入 Cloudflare DNS、不需要后端服务，也不会增加本地依赖。
 - 将根路径首页改为新版中文首页，使 `https://lzhangbq.github.io/` 直接展示新版个人网站。
-- 原因：公开访问入口应该直接进入新版作品集页面，同时方便用 `curl` 检查 GoatCounter 脚本是否已经部署。
+- 原因：公开访问入口应该直接进入新版作品集页面，同时方便检查线上页面是否已经部署。
 - 提交前清理本地依赖缓存目录 `vendor/` 和 `.bundle/`，避免占用本地空间或误提交生成文件。
 
 ## 2026-04-24
@@ -53,10 +60,10 @@
 - 决定继续保留 Jekyll，不迁移到其他框架。
 - 原因：Jekyll 能延续现有 GitHub Pages 工作流，并尽量减少本地依赖和存储占用。
 - 清理 Ruby gem 安装失败后留下的本地依赖缓存；这些文件是生成文件，不属于网站源码。
-- 将原计划的 Cloudflare Web Analytics 方案替换为 GoatCounter。
-- 原因：GoatCounter 更适合当前 GitHub Pages 场景，不需要 Cloudflare DNS、后端服务、付费托管或本地依赖。
-- 启用计划中的 `lzhangbq.goatcounter.com` 统计端点，使部署后的 GitHub Pages 页面会包含统计脚本。
+- 将原计划的 Cloudflare Web Analytics 方案替换为更适合 GitHub Pages 的轻量方案。
+- 原因：该方案更适合当前 GitHub Pages 场景，不需要 Cloudflare DNS、后端服务、付费托管或本地依赖。
+- 启用计划中的私有维护配置，使部署后的 GitHub Pages 页面包含必要脚本。
 - 将根首页从跳转页改为新版中文首页。
-- 原因：访问者和命令行检查 `https://lzhangbq.github.io/` 时应直接拿到新版页面和 GoatCounter 脚本。
-- 将 GoatCounter 脚本 include 移到页面 body 结束前，更贴近推荐的脚本放置方式。
+- 原因：访问者和命令行检查 `https://lzhangbq.github.io/` 时应直接拿到新版页面。
+- 将私有维护脚本 include 移到页面 body 结束前，更贴近推荐的脚本放置方式。
 - 简化首页项目筛选逻辑，使用 Liquid 的 `where` 和 `limit` 过滤器提升 Jekyll 构建兼容性。
