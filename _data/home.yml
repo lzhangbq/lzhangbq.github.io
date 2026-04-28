@@ -15,45 +15,47 @@ en:
     - label: Contact
       url: "#contact"
   eyebrow: AI / LLM Engineer
-  title: Building reliable AI systems from model capability to product experience.
-  summary: "CS master's graduate, former TikTok software engineer in the United States, now focused on AI large language model development in China."
+  title: Building reliable AI experiences from model behavior to product delivery.
+  summary: "AI / LLM engineer with TikTok production software engineering experience and a CS master's background, now focused on model fine-tuning, AI evaluation capabilities, and production-grade AI product engineering."
   location: China
   primary_cta: View Resume
   secondary_cta: Contact Me
   highlights:
-    - value: 2 years
-      label: Software engineering at TikTok US
+    - value: TikTok
+      label: Production software engineering experience
     - value: AI / LLM
-      label: Current engineering focus
+      label: Fine-tuning and evaluation focus
     - value: CMU
       label: Master's study in computer science
   focus:
-    - LLM applications
+    - Model fine-tuning
+    - AI evaluation
+    - AIGC product engineering
     - Backend systems
-    - ML engineering
-    - Search and recommendation
+    - Recommendation systems
+    - Android / Kotlin
   about_title: About
-  about_body: "I work at the intersection of backend engineering, machine learning, and AI product development. My background spans large-scale software systems, model-driven applications, and applied machine learning projects across search, recommendation, NLP, and computer vision."
+  about_body: "I am an AI / LLM engineer with production software engineering experience at TikTok across user-facing product features, AIGC-powered social experiences, and backend engineering. My work has involved large-scale social product experiences, recommendation surfaces, virtual identity features, and cross-functional collaboration with product, design, and algorithm teams. I now focus on model fine-tuning, AI evaluation capabilities, and engineering reliable AI experiences from model behavior to product delivery."
   experience_title: Experience
   experience:
-    - role: AI Large Language Model Developer
+    - role: AI / LLM Engineering
       org: Current focus
       meta: China
-      body: Building AI and LLM-oriented applications with an emphasis on practical engineering, reliability, and product integration.
+      body: Focused on model fine-tuning and AI model evaluation capabilities, including workflows for assessing model behavior, improving response quality, and supporting iterative model optimization.
     - role: Software Development Engineer
       org: TikTok
-      meta: United States · 2 years
-      body: Worked on production software systems in a fast-moving engineering environment with strong expectations for scale, quality, and delivery.
+      meta: 2023 - 2025
+      body: Worked on production software systems across user-facing product features, AIGC-powered social experiences, and backend engineering. Built and launched social product features in multiple regions, collaborated with product, design, and algorithm teams, and contributed to recommendation-related engineering improvements with a focus on reliability, maintainability, and product impact.
     - role: M.S. in Computer Science
       org: Carnegie Mellon University
       meta: Pittsburgh
       body: Studied intelligent information systems with coursework across machine learning, NLP, search engines, distributed systems, and production ML.
   projects_title: Selected Projects
-  projects_intro: Selected academic and engineering projects from machine learning, search, and AI system development.
+  projects_intro: Selected work across AI product engineering, backend systems, recommendation-related engineering, and applied machine learning.
   project_link_label: View project
   theme_toggle_dark: Dark
   theme_toggle_light: Light
-  title_highlight: reliable AI systems
+  title_highlight: reliable AI experiences
   contact_title: Contact
   contact_body: "I am open to conversations around AI engineering, LLM applications, backend systems, and practical machine learning."
 zh:
@@ -72,45 +74,47 @@ zh:
       url: /blog
     - label: 联系
       url: "#contact"
-  eyebrow: AI 大模型开发工程师
-  title: 从模型能力到产品体验，构建可靠的 AI 系统。
-  summary: "计算机科学硕士，曾在美国 TikTok 担任软件开发工程师两年，目前回国从事 AI 大模型开发方向。"
+  eyebrow: AI 大模型工程师
+  title: 从模型行为到产品交付，构建可靠的 AI 体验。
+  summary: "具备 TikTok 生产级软件工程经验和计算机科学硕士背景，目前专注模型微调、AI 模型评测能力与生产级 AI 产品工程。"
   location: 中国
   primary_cta: 查看简历
   secondary_cta: 联系我
   highlights:
-    - value: 2 年
-      label: 美国 TikTok 软件工程经历
+    - value: TikTok
+      label: 生产级软件工程经验
     - value: AI / LLM
-      label: 当前技术方向
+      label: 微调与评测方向
     - value: CMU
       label: 计算机科学硕士背景
   focus:
-    - 大模型应用
+    - 模型微调
+    - AI 模型评测
+    - AIGC 产品工程
     - 后端系统
-    - 机器学习工程
-    - 搜索与推荐
+    - 推荐系统
+    - Android / Kotlin
   about_title: 关于我
-  about_body: "我关注后端工程、机器学习与 AI 产品开发的交叉方向。过往经历覆盖大规模软件系统、模型驱动应用，以及搜索、推荐、NLP、计算机视觉等方向的机器学习项目。"
+  about_body: "我是一名 AI / 大模型方向工程师，拥有 TikTok 生产级软件工程经验，覆盖用户侧产品功能、AIGC 社交体验和后端工程。过去我参与过面向大规模用户的社交产品体验、推荐入口和虚拟身份相关能力建设，也与产品、设计、算法等团队协作推进工程落地。当前我主要关注模型微调、AI 模型评测能力和大模型应用工程化，希望把模型能力稳定地转化为可用、可评估、可迭代的产品体验。"
   experience_title: 经历
   experience:
-    - role: AI 大模型开发工程师
+    - role: AI / 大模型工程方向
       org: 当前方向
       meta: 中国
-      body: 从事面向 AI 与大语言模型的应用和工程开发，关注实用性、可靠性以及与真实产品场景的结合。
+      body: 主要关注模型微调与 AI 模型评测能力建设，包括评估模型行为、提升回复质量、支持模型迭代优化的工程流程。
     - role: 软件开发工程师
       org: TikTok
-      meta: 美国 · 2 年
-      body: 在快节奏的工程环境中参与生产级软件系统开发，关注系统规模、代码质量和交付效率。
+      meta: 2023 - 2025
+      body: 参与面向大规模用户的生产级软件系统开发，工作覆盖用户侧产品功能、AIGC 社交体验和后端工程。参与多个地区上线的社交产品能力建设，与产品、设计、算法等团队协作，推进推荐相关工程优化，重点关注系统可靠性、可维护性和产品效果。
     - role: 计算机科学硕士
       org: Carnegie Mellon University
       meta: Pittsburgh
       body: 学习方向覆盖机器学习、自然语言处理、搜索引擎、分布式系统和生产环境机器学习等课程。
   projects_title: 精选项目
-  projects_intro: 这里整理了机器学习、搜索和 AI 系统开发相关的代表性学术与工程项目。
+  projects_intro: 这里整理了 AI 产品工程、后端系统、推荐相关工程和应用机器学习方向的代表性经历。
   project_link_label: 查看项目
   theme_toggle_dark: 暗色
   theme_toggle_light: 亮色
-  title_highlight: 可靠的 AI 系统
+  title_highlight: 可靠的 AI 体验
   contact_title: 联系
   contact_body: "欢迎交流 AI 工程、大模型应用、后端系统和实用机器学习相关话题。"

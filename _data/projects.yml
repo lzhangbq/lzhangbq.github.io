@@ -1,0 +1,97 @@
+en:
+  - title: OCR-RAG Knowledge Repo
+    order: 1
+    featured: true
+    category: AI Application
+    description: Turns scanned PDFs into a searchable and question-answerable knowledge repository with OCR extraction, semantic retrieval, and LLM-powered answers.
+    url: https://github.com/lzhangbq/OCR-RAG-Knowledge-Repo
+    tech_tags:
+      - OCR
+      - RAG
+      - FastAPI
+      - React
+      - FAISS
+      - Claude
+  - title: LLM Knowledge Graph
+    order: 2
+    featured: true
+    category: AI Knowledge System
+    description: An interactive knowledge graph for organizing, browsing, and understanding core AI / LLM concepts and their relationships.
+    url: https://github.com/lzhangbq/LLM-Knowledge-Graph
+    tech_tags:
+      - Knowledge Graph
+      - LLM
+      - JavaScript
+      - Visualization
+  - title: COVID-19 Knowledge Graph Construction
+    order: 3
+    featured: true
+    category: NLP / Knowledge Graph
+    description: Undergraduate final year project on extracting entities and relations from COVID-19 literature to build a medical knowledge graph and visualization application.
+    url: https://github.com/lzhangbq/COVID-19-Knowledge-Graph-Construction
+    tech_tags:
+      - NLP
+      - NER
+      - OpenIE
+      - Knowledge Graph
+      - MongoDB
+  - title: Search Engines
+    order: 4
+    featured: true
+    category: Search / Backend
+    description: CMU coursework project implementing retrieval and ranking components including exact match, best match, relevance feedback, learning-to-rank, and diversified ranking.
+    url: https://github.com/lzhangbq/Search-Engines
+    tech_tags:
+      - Java
+      - Lucene
+      - Ranking
+      - Information Retrieval
+
+zh:
+  - title: OCR-RAG Knowledge Repo
+    order: 1
+    featured: true
+    category: AI 应用
+    description: 将扫描版 PDF 转换为可检索、可问答的知识库系统，覆盖 OCR 文本提取、语义检索和 LLM 问答链路。
+    url: https://github.com/lzhangbq/OCR-RAG-Knowledge-Repo
+    tech_tags:
+      - OCR
+      - RAG
+      - FastAPI
+      - React
+      - FAISS
+      - Claude
+  - title: LLM Knowledge Graph
+    order: 2
+    featured: true
+    category: AI 知识系统
+    description: 用于组织、浏览和理解 AI / LLM 核心概念及其关系的交互式知识图谱项目。
+    url: https://github.com/lzhangbq/LLM-Knowledge-Graph
+    tech_tags:
+      - 知识图谱
+      - LLM
+      - JavaScript
+      - 可视化
+  - title: COVID-19 Knowledge Graph Construction
+    order: 3
+    featured: true
+    category: NLP / 知识图谱
+    description: 本科毕业项目，从 COVID-19 文献中抽取实体与关系，构建医学知识图谱和可视化应用。
+    url: https://github.com/lzhangbq/COVID-19-Knowledge-Graph-Construction
+    tech_tags:
+      - NLP
+      - NER
+      - OpenIE
+      - 知识图谱
+      - MongoDB
+  - title: Search Engines
+    order: 4
+    featured: true
+    category: 搜索 / 后端
+    description: CMU 搜索引擎课程项目，实现精确匹配、最佳匹配、伪相关反馈、Learning-to-Rank 和多样化排序等检索组件。
+    url: https://github.com/lzhangbq/Search-Engines
+    tech_tags:
+      - Java
+      - Lucene
+      - Ranking
+      - 信息检索

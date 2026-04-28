@@ -145,22 +145,27 @@ layout: compress
             </div>
 
             <div class="project-grid">
-                {% assign project_posts = site.posts | where: "projects", true %}
-                {% for post in project_posts limit: 4 %}
+                {% if page.lang == "zh" %}
+                    {% assign project_items = site.data.projects.zh %}
+                {% else %}
+                    {% assign project_items = site.data.projects.en %}
+                {% endif %}
+                {% assign featured_projects = project_items | where: "featured", true | sort: "order" %}
+                {% for project in featured_projects limit: 4 %}
                         <article class="project-card">
-                            <p>{{ post.tag }}</p>
-                            <h3>{{ post.title }}</h3>
-                            {% if post.description %}
-                                <span>{{ post.description }}</span>
+                            <p>{{ project.category }}</p>
+                            <h3>{{ project.title }}</h3>
+                            {% if project.description %}
+                                <span>{{ project.description }}</span>
                             {% endif %}
-                            {% if post.tech_tags %}
+                            {% if project.tech_tags %}
                                 <div class="tech-tags">
-                                    {% for t in post.tech_tags %}
+                                    {% for t in project.tech_tags %}
                                         <span>{{ t }}</span>
                                     {% endfor %}
                                 </div>
                             {% endif %}
-                            <a href="{{ post.url | relative_url }}">{{ home.project_link_label }}</a>
+                            <a href="{{ project.url }}" target="_blank" rel="noopener">{{ home.project_link_label }}</a>
                         </article>
                 {% endfor %}
             </div>

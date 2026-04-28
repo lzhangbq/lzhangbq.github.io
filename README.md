@@ -37,6 +37,7 @@
 .
 ├── _config.yml                         # 站点配置、个人信息、社交链接、统计配置
 ├── _data/home.yml                      # 中英文首页内容、主题切换文案
+├── _data/projects.yml                  # 首页精选项目数据
 ├── _layouts/
 │   ├── default.html                    # 旧页面/文章通用布局
 │   ├── modern-home.html                # 新版双语首页布局（含主题切换 JS）
@@ -107,20 +108,40 @@ _config.yml
 
 ### 新增项目或文章
 
+首页精选项目集中维护在：
+
+```text
+_data/projects.yml
+```
+
+其中：
+
+- `zh`：中文首页项目卡片。
+- `en`：英文首页项目卡片。
+- `title`：项目名称。
+- `order`：首页展示顺序，数字越小越靠前。
+- `featured`：是否展示在首页精选项目中。
+- `category`：项目分类。
+- `description`：公开展示描述。
+- `url`：项目链接，通常指向 GitHub。
+- `tech_tags`：技术标签。
+
+旧项目和文章内容仍保留在 `_posts/` 中，用于历史项目详情和后续迁移。
+
 在 `_posts/` 中新增 Markdown 文件，文件名格式建议为：
 
 ```text
 YYYY-MM-DD-title.markdown
 ```
 
-如果希望项目出现在新版首页精选项目中，需要在 front matter 中设置：
+如果希望项目出现在旧版 Projects 页面中，需要在 front matter 中设置：
 
 ```yaml
 projects: true
 category: project
 ```
 
-新版首页当前会展示最近的 4 个 `projects: true` 内容。
+新版首页当前展示 `_data/projects.yml` 中 `featured: true` 的前 4 个项目，并按 `order` 排序，不再直接读取 `_posts`。
 
 ### 更新简历
 
